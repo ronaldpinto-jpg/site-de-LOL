@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore os campeões de League of Legends usando dados do Data Dragon da Riot Games.">
+  <meta name="theme-color" content="#0b0f17">
+  <title>LoL Champions | Explorador de Campeões</title>
+  <link rel="preconnect" href="https://ddragon.leagueoflegends.com">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#" aria-label="LoL Champions - início">
+      <span class="logo__mark">⚔</span>
+      <span>LoL<span>Champions</span></span>
+    </a>
+
+    <button class="theme-button" id="themeButton" type="button" aria-label="Alternar tema">
+      ☀️
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">LEAGUE OF LEGENDS</p>
+        <h1>Conheça os <span>campeões</span> de Runeterra.</h1>
+        <p class="hero__text">
+          Pesquise, filtre e descubra informações, atributos e habilidades dos campeões.
+        </p>
+
+        <div class="search">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Pesquisar campeão..." autocomplete="off">
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog" id="campeoes">
+      <div class="catalog__top">
+        <div>
+          <p class="eyebrow">CATÁLOGO</p>
+          <h2>Campeões</h2>
+        </div>
+        <span class="counter" id="counter">Carregando...</span>
+      </div>
+
+      <div class="filters" id="filters" aria-label="Filtros de campeões"></div>
+      <div class="status" id="status" role="status">Carregando campeões...</div>
+      <div class="champions" id="champions"></div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <article class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button class="modal__close" id="modalClose" type="button" aria-label="Fechar">×</button>
+      <div class="modal__cover">
+        <img id="modalSplash" src="" alt="">
+        <div class="modal__gradient"></div>
+        <div class="modal__title">
+          <p id="modalTitle"></p>
+          <h2 id="modalName"></h2>
+        </div>
+      </div>
+
+      <div class="modal__body">
+        <div class="tags" id="modalTags"></div>
+        <p class="modal__lore" id="modalLore"></p>
+
+        <h3>Habilidades</h3>
+        <div class="abilities" id="abilities"></div>
+
+        <h3>Atributos</h3>
+        <div class="stats" id="stats"></div>
+      </div>
+    </article>
+  </div>
+
+  <footer class="footer">
+    <p>Projeto educacional não oficial. Dados e imagens fornecidos pelo Data Dragon da Riot Games.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
